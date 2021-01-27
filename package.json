@@ -1,0 +1,19 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "description": "cuestionario de preguntas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crisyg97/Quiz.git"
+  },
+  "author": "Cristian Garay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crisyg97/Quiz/issues"
+  },
+  "homepage": "https://github.com/crisyg97/Quiz#readme"
+}
