@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
+const routes = require('../routes/index');
 const app = express();
 
 module.exports = app => {
     //config
-    app.set('ports',process.env.PORT || 3000);
+    app.set('port',process.env.PORT || 3000);
     //middlewares
     app.use(morgan('dev'));
     app.use(express.urlencoded({ extended: false }));
