@@ -1,3 +1,4 @@
+
 const ctrl = {};
 
 ctrl.index = (req,res) => {
