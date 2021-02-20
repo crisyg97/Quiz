@@ -2,16 +2,13 @@ doctype html
 html(lang="es")
 
 head
+    meta(http-equiv="X-UA-Compatible", content="IE=7")
     title quiz app
-    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1", crossorigin="anonymous")
-    //link(href="stylesheets/style.css", type="text/css", media="screen")
-    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css")
-    
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1", crossorigin="anonymous")    
     style. 
         @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
         body {
-            //background: #fafafa;
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(to bottom, rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 60%,rgba(158,203,45,1) 100%);
         }
@@ -29,163 +26,46 @@ head
             line-height: 1.7em;
             color: #999;
         }
-        .inpName {
-            position: center;  
-            left: 100px; 
+        nav{
+            background: linear-gradient(to bottom, rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 60%,rgba(158,203,45,1) 100%);
         }
-        .wrapper {
-            display: flex;
-            width: 100%;
-            align-items: stretch;
-        }
-        #sidebar {
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            z-index: 999;
-            background: #7386D5;
-            color: #fff;
-            transition: all 0.3s;
-        }
-        #sidebar.active {
-            margin-left: -250px;
-        }
-        a[data-toggle="collapse"] {
-            position: relative;
-        }
-        .dropdown-toggle::after {
-            display: block;
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-        }
-        @media (max-width: 768px) {
-            #sidebar {
-                margin-left: -250px;
-            }
-            #sidebar.active {
-                margin-left: 0;
-            }
-        }
-        a, a:hover, a:focus {
-            color: inherit;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        #sidebar {
-            /* don't forget to add all the previously mentioned styles here too */
-            background: #7386D5;
-            color: #fff;
-            transition: all 0.3s;
-        }
-
-        #sidebar .sidebar-header {
-            padding: 20px;
-            background: #6d7fcc;
-        }
-
-        #sidebar ul.components {
-            padding: 20px 0;
-            border-bottom: 1px solid #47748b;
-        }
-
-        #sidebar ul p {
-            color: #fff;
-            padding: 10px;
-        }
-
-        #sidebar ul li a {
-            padding: 10px;
-            font-size: 1.1em;
-            display: block;
-        }
-        #sidebar ul li a:hover {
-            color: #7386D5;
-            background: #fff;
-        }
-
-        #sidebar ul li.active > a, a[aria-expanded="true"] {
-            color: #fff;
-            background: #6d7fcc;
-        }
-        ul ul a {
-            font-size: 0.9em !important;
-            padding-left: 30px !important;
-            background: #6d7fcc;
-        }
-
     script(src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js", integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ", crossorigin="anonymous")
     script(src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js", integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY", crossorigin="anonymous")
 
 body
-    div(class="container")
-        div(id="content")
-            nav(class="navbar navbar-expand-lg navbar-light bg-light")
-                div(class="container-fluid")
-                    i(class="fas fa-align-left")        
-                    button(type="button" id="sidebarCollapse" class="btn btn-info") Toggle Sidebar 
+    div.container
+        nav(class="navbar navbar-expand-lg navbar-light bg-light")
+            a(class="navbar-brand" href="#")
+            button(class="navbar-toggler", type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+                span(class="navbar-toggler-icon")
+            div(class="collapse navbar-collapse", id="navbarNav")
+                ul(class="navbar-nav")
+                    li(class="nav-item active")
+                        a(class="nav-link" href="#") Home 
+                    li(class="nav-item")
+                        a(class="nav-link" href="#") Ranking
+                    li(class="nav-item")
+                        a(class="nav-link" href="#") About
+    
         h1 Bienvenidos a Quiz...
         br
         br
         br
-        div(class="inpName")
-            form(name="addUser", action="/addUser", method="POST")
+        div.inpName
+            form(name="addUser", action="/", method="POST")
                 label Ingrese su nombre #[input] 
-        div(class="wrapper")
-            nav(id="sidebar")
-                div(class="dismiss")
-                    i(class="fas fa-arrow-left")
-                div(class="sidebar-header")
-                    h3 bootstrap sidebar
-                ul(class="list-unstyled components")
-                    p dummy heading
-                    li(class="active")  
-                        a(href="#homeSubmenu", data-toggle="collapse", aria-expanded="false", class="dropdown-toggle") home
-                        ul(class="collapse list-unstyled" id="homeSubmenu")
-                            li 
-                                a(href="#") home 1
-                            li 
-                                a(href="#") home 2
-                            li 
-                                a(href="#") home 3
-                    li 
-                        a(href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle") page
-                        ul(class="collapse list-unstyled" id="pageSubmenu")
-                            li 
-                                a(href="#") page 1
-                            li 
-                                a(href="#") page 2
-                            li 
-                                a(href="#") page 3   
-                    li 
-                        a(href="#") portfolio 
-                    li 
-                        a(href="#") contact
-        div(class="overlay  ")
-                
-
-    
+                button(id="btnAddUser")
     
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")   
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js")
-    
     script.
-        $(document).ready(function () {
-            $("#sidebar").mCustomScrollbar({
-                theme: "minimal"
-            });
-
-            $('#sidebarCollapse').on('click', function () {
-                //open or close navbar
-                $('#sidebar').toggleClass('active');
-                //close dropdowns
-                $('.collapse.in').toggleClass('in');
-
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-        });
+        const btnAddUser = document.getElementById('btnAddUser');
+        btnAddUser.AddEventListener('click', () => {
+            axios({
+                method: POST,
+                url: 'https://localhost:3000/'
+                data: 
+            })
+        })
