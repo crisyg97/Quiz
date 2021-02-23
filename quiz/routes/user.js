@@ -1,6 +1,6 @@
 const ctrl = {};
 
-var user = require('./models/user');
+var user = require('../models/user');
 
 ctrl.index = (req,res) => {
 
