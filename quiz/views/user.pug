@@ -73,7 +73,7 @@ body
         div(class="w3-container", style="background-color:green; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);")
                 form(class="w3-container", name="addUser", action="/", method="POST")
                     i(class="w3-xlarge fa fa-user" style="margin-right: 10px") #[label Ingrese su nombre]
-                    label #[input(class="w3-input w3-border", style="padding: 10px 90px; margin-top:10px; margin-bottom:10px")]
+                    label #[input(class="w3-input w3-border", id="inpName", style="padding: 10px 90px; margin-top:10px; margin-bottom:10px")]
                     button(class="btnAddUser", style="margin-left:20px" ) Iniciar
     
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
@@ -82,9 +82,12 @@ body
     script.
         const btnAddUser = document.getElementById('btnAddUser');
         btnAddUser.AddEventListener('click', () => {
+            var inpName = document.getElementById('inpName').value();
             axios({
                 method: POST,
                 url: 'https://localhost:3000/'
-                data: 
+                data: {
+                    Name: inpName
+                }
             })
         })
