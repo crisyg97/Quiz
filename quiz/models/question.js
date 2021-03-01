@@ -10,7 +10,7 @@ var questionShema = new Schema({
         responseFour: {type: String}
     }],
     CorrectResponse: {type: Number},
-    Status: {type: String, enum {'ACTIVE','INACTIVE'}, required: true}
+    Status: {type: String, enum: ['ACTIVE','INACTIVE'], required: true}
 });
 
 var question = mongoose.model("question",questionShema);
