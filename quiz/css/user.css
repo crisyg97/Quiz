@@ -1,0 +1,35 @@
+.btnAddUser{
+    padding: 5px 20px;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #4CAF50;
+    border-radius: 1em;
+    border: 2px solid #0016b0;
+    text-align: center;
+    position: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+/*cuando se pasa por encima del boton cambiar el color*/
+.btnAddUser:hover{ 
+    display: inline-block;
+    color: #1883ba;
+    background-color: #ffffff
+}
+input.inpName {
+    border-radius: 1em;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+i#icon {
+    margin-right: 10px;
+}
+div#containerInput {
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color:green; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+h1#titulo{
+    margin-left: 50px;
+    text-decoration:underline;
+}

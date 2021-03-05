@@ -31,68 +31,41 @@ head
             width: 1.25em;
             height: 1.25em;  
         }
-        .radio_input{
-
-        }
         #question{
             margin-top: 40px;
             margin-left: 150px;
         }
-        /*.response:hover input ~ .checkmark {
-            background-color: #ccc;
+        .containerResp{
+            margin-top: 3px;
+            border-width: 1px;
+            border-style: outset;
+            border-color: lightblue;
+            margin-left:20px;
+            margin-right:20px;
         }
-        .response input:checked ~ .checkmark {
-            background-color: #2196F3;
-        }
-        .checkmark:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
-        .response input:checked ~ .checkmark:after {
-            display: block;
-        }
-        .response input:checked ~ .checkmark {
-            background-color: #2196F3;
-        }
-        .container input:checked ~ .checkmark:after {
-            display: block;
-        }*/
-        .response .checkmark:after {
-            top: 9px;
-            left: 9px;
-            width: 8px;
-            height: 8px;
-            borde r-radius: 50%;
-            background: white;
+        #clock{
+            margin-left: 300px;
         }
 
 body
-    div.container
-        nav(class="navbar navbar-expand-lg navbar-light bg-light")
-            a(class="navbar-brand" href="#")
-            button(class="navbar-toggler", type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
-                span(class="navbar-toggler-icon")
-            div(class="collapse navbar-collapse", id="navbarNav")
-                ul(class="navbar-nav")
-                    li(class="nav-item")
-                        a(class="nav-link" href="#") Home 
-                    li(class="nav-item")
-                        a(class="nav-link" href="#") Ranking
-                    li(class="nav-item")
-                        a(class="nav-link" href="#") About
+    include navbar.pug
     div
         div 
             h2(id="question") pregunta? 
+            p(id="clock") Time
+                span(id="minutes")
+                span(id="seconds")
         form
-            div
+            div.containerResp
                 label(class="response") opcion1 #[input(type="radio", id="radioId", value="", class="radio_input")] 
-            div
-                label(class="response") opcion2 #[input(class="checkboxx",type="radio", id="radioId", value="")]
-            div
-                label(class="response") opcion3 #[input(class="checkboxx", type="radio", id="radioId", value="")]
-            div
-                label(class="response") opcion4 #[input(class="checkboxx", type="radio", id="radioId", value="")]
+            div.containerResp
+                label(class="response") opcion2 #[input(class="radio_input",type="radio", id="radioId", value="")]
+            div.containerResp
+                label(class="response") opcion3 #[input(class="radio_input", type="radio", id="radioId", value="")]
+            div.containerResp
+                label(class="response") opcion4 #[input(class="radio_input", type="radio", id="radioId", value="")]
 
-    //script. 
-        document.getElementById("").innerHTML
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script. 
+        
+        //document.getElementById("").innerHTML

@@ -8,6 +8,7 @@ ctrl.index = (req,res) => {
 
 ctrl.create = (req,res) => {
     var body = req.body.user;
+    
     var user = new User({
         name: body.name,
         Status: 'ACTIVE'

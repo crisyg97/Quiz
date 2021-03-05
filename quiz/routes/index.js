@@ -17,5 +17,14 @@ module.exports = app => {
   });
   router.get('/question', question.randomQuestion);
 
+  router.get('/ranking', (req,res) => {
+    res.render('ranking.pug');
+  })
+  router.get('/ranking', user.index);
+
+  router.get('/about', (req, res) => {
+    res.render('about.pug');
+  })
+  
   app.use(router);
 };
