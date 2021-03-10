@@ -7,52 +7,15 @@ head
     link(rel="stylesheet", href="https://www.w3schools.com/w3css/4/w3.css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     style
-        include ../css/style.css
-    style.
-        .response{
-            margin-left: 150px;
-            margin-top: 50px;
-            display: block;
-            position: relative;
-            padding-left: 35px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            font-size: 22px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        #radioId{
-            display inline-flex;
-            align-items: center;
-            margin-left: 10px; 
-            cursor: pointer;  
-            width: 1.25em;
-            height: 1.25em;  
-        }
-        #question{
-            margin-top: 40px;
-            margin-left: 150px;
-        }
-        .containerResp{
-            margin-top: 3px;
-            border-width: 1px;
-            border-style: outset;
-            border-color: lightblue;
-            margin-left:20px;
-            margin-right:20px;
-        }
-        #clock{
-            margin-left: 300px;
-        }
-
+        include ../public/stylesheets/style.css
+        include ../public/stylesheets/question.css
+        
 body
     include navbar.pug
     div
         div 
             h2(id="question") pregunta? 
-            p(id="clock") Time
+            p(id="clock")
                 span(id="minutes")
                 span(id="seconds")
         form
@@ -66,6 +29,16 @@ body
                 label(class="response") opcion4 #[input(class="radio_input", type="radio", id="radioId", value="")]
 
     script(src="https://code.jquery.com/jquery-3.6.0.min.js")
-    script. 
+    script 
+        include ../public/javascripts/question.js
+    //script.
+        var start = Date.now();
+        console.log(start);
+        function mostrarTiempo() {
+            var delta = Date.now() - start;
+            document.getElementById('clock').innerHTML = (Math.floor(delta / 1000));
+            console.log(delta);
+        };
         
-        //document.getElementById("").innerHTML
+        setInterval(mostrarTiempo(), 1000);
+    //script(src="../public/javascript")

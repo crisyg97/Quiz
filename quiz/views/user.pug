@@ -8,45 +8,8 @@ head
     link(rel="stylesheet", href="https://www.w3schools.com/w3css/4/w3.css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     style
-        include ../css/style.css
-        include ../css/user.css
-    //style. 
-        .btnAddUser{
-            padding: 5px 20px;
-            font-weight: 600;
-            font-size: 20px;
-            background-color: #4CAF50;
-            border-radius: 1em;
-            border: 2px solid #0016b0;
-            text-align: center;
-            position: center;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        }
-        //cuando se pasa por encima del boton cambiar el color
-        .btnAddUser:hover{ 
-            display: inline-block;
-            color: #1883ba;
-            background-color: #ffffff;
-        }
-        #inpName {
-            border-radius: 4em;
-            padding: 10px 90px;
-            margin-top:10px;
-            margin-bottom:10px;
-            margin-left: 100px;
-            margin-rigth: 10px;
-        }
-        #icon {
-            margin-right: 10px;
-        }
-        #containerInput {
-            background-color:green; 
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        }
-        #titulo{
-            text-decoration:underline;
-        }
-        
+        include ../public/stylesheets/style.css
+        include ../public/stylesheets/user.css
 
 body
     include navBar.pug
