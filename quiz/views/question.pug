@@ -31,14 +31,3 @@ body
     script(src="https://code.jquery.com/jquery-3.6.0.min.js")
     script 
         include ../public/javascripts/question.js
-    //script.
-        var start = Date.now();
-        console.log(start);
-        function mostrarTiempo() {
-            var delta = Date.now() - start;
-            document.getElementById('clock').innerHTML = (Math.floor(delta / 1000));
-            console.log(delta);
-        };
-        
-        setInterval(mostrarTiempo(), 1000);
-    //script(src="../public/javascript")
