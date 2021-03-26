@@ -9,10 +9,13 @@ head
 body
     include navbar.pug
 
-    table(id="table",style="width:100%" ,border="1")
-        tr
-            th Name
-            th Time
-        tr
-            td test
-            td 00:00
+    //each user in data
+        table(id="table",style="width:100%" ,border="1")
+            thead 
+                tr 
+                    th Name 
+                    th Time
+            tbody 
+                tr 
+                    th user.name
+                    th user.time

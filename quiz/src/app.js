@@ -6,6 +6,8 @@ const app = configExpress(express());
 const mongodbConnect = require('./mongooseConnect');
 const db = mongodbConnect.connect();
 
+app.use(express.static(__dirname + '../public') );
+
 app.set('views', '../views');
 app.set('view engine', 'pug');
 
